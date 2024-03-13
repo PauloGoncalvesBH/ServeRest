@@ -420,7 +420,7 @@
             "required": true,
             "description": "ID do produto",
             "type": "string",
-            "default": "0uxuPY0cbmQhpEz1"
+            "default": "K6leHdftCeOJj8BJ"
           }
         ],
         "responses": {
@@ -474,7 +474,7 @@
             "required": true,
             "description": "ID do produto",
             "type": "string",
-            "default": "0uxuPY0cbmQhpEz1"
+            "default": "K6leHdftCeOJj8BJ"
           },
           {
             "in": "body",
@@ -1093,7 +1093,7 @@
               },
               "idUsuario": {
                 "type": "string",
-                "example": "oUb7aGkMtSEPf6BZ"
+                "example": "0uxuPY0cbmQhpEz1"
               },
               "_id": {
                 "type": "string",
@@ -1146,7 +1146,7 @@
         },
         "idUsuario": {
           "type": "string",
-          "example": "oUb7aGkMtSEPf6BZ"
+          "example": "0uxuPY0cbmQhpEz1"
         },
         "_id": {
           "type": "string",
