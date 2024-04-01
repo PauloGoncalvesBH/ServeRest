@@ -138,4 +138,43 @@ describe(rotaProdutos + ' POST', () => {
       imagem: 'imagem deve ser uma string'
     })
   })
+
+  describe('Number.MAX_SAFE_INTEGER', () => {
+    it('Deve retornar erro 400 ao enviar número inteiro maior que Number.MAX_SAFE_INTEGER', async () => {
+      let produto = utils.dadosProduto()
+      produto = {
+        ...produto,
+        preco: Number.MAX_SAFE_INTEGER + 1
+      }
+
+      const { body } = await request
+        .post('/produtos')
+        .send(produto)
+        .set('authorization', authorizationAdministrador)
+        .expect(400)
+
+      chai.assert.deepEqual(body, {
+        preco: `preco não pode ser maior que ${Number.MAX_SAFE_INTEGER}`
+      })
+    })
+
+    it('Deve cadastrar produto com sucesso ao enviar preco igual a Number.MAX_SAFE_INTEGER', async () => {
+      let produto = utils.dadosProduto()
+      produto = {
+        ...produto,
+        preco: Number.MAX_SAFE_INTEGER
+      }
+
+      const { body } = await request
+        .post('/produtos')
+        .send(produto)
+        .set('authorization', authorizationAdministrador)
+        .expect(201)
+
+      chai.assert.deepEqual(body, {
+        message: 'Cadastro realizado com sucesso',
+        _id: body._id
+      })
+    })
+  })
 })
