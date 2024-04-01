@@ -43,7 +43,7 @@ jobs:
     - name: Project checkout
       uses: actions/checkout@v3
     - name: Node.js Setup
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
     - name: Installation of Node.js dependencies
       run: npm ci
     - name: Lint
