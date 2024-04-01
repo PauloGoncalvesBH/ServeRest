@@ -28,7 +28,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         GCP_IAM_SERVICE_ACCOUNT_KEY: op://CI-CD/google-cloud/SERVICE_ACCOUNT_KEY
@@ -58,7 +58,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         GCP_IAM_SERVICE_ACCOUNT_KEY: op://CI-CD/google-cloud/SERVICE_ACCOUNT_KEY
@@ -157,7 +157,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         GCP_IAM_SERVICE_ACCOUNT_KEY: op://CI-CD/google-cloud/SERVICE_ACCOUNT_KEY
@@ -224,7 +224,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         GCP_IAM_SERVICE_ACCOUNT_KEY: op://CI-CD/google-cloud/SERVICE_ACCOUNT_KEY
@@ -316,7 +316,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         GCP_IAM_SERVICE_ACCOUNT_KEY: op://CI-CD/google-cloud/SERVICE_ACCOUNT_KEY
@@ -358,7 +358,7 @@ jobs:
     # Why delete tag on rollback? Read: https://docs.pact.io/pact_broker/tags#handling-rollbacks
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         PACT_BROKER_TOKEN: op://CI-CD/pactflow/PACT_BROKER_TOKEN
@@ -381,7 +381,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         PACT_BROKER_TOKEN: op://CI-CD/pactflow/PACT_BROKER_TOKEN
@@ -410,7 +410,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         PACT_BROKER_TOKEN: op://CI-CD/pactflow/PACT_BROKER_TOKEN
