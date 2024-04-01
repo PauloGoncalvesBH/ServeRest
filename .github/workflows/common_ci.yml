@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         PACT_BROKER_TOKEN: op://CI-CD/pactflow/PACT_BROKER_TOKEN
@@ -86,7 +86,7 @@ jobs:
     - name: Project checkout
       uses: actions/checkout@v3
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         DD_API_KEY: op://CI-CD/Datadog/DD_API_KEY
@@ -115,7 +115,7 @@ jobs:
     - name: Project checkout
       uses: actions/checkout@v3
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         DD_API_KEY: op://CI-CD/Datadog/DD_API_KEY
@@ -144,7 +144,7 @@ jobs:
     - name: Project checkout
       uses: actions/checkout@v3
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         DD_API_KEY: op://CI-CD/Datadog/DD_API_KEY
@@ -185,7 +185,7 @@ jobs:
     - name: Merge coverage report
       run: npm run merge-lcov
     - name: Load secrets from 1password
-      uses: 1password/load-secrets-action@v1
+      uses: 1password/load-secrets-action@v2
       env:
         OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
         SONAR_TOKEN: op://CI-CD/sonar/SONAR_TOKEN
