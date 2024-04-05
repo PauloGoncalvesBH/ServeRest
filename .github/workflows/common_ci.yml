@@ -74,9 +74,9 @@ jobs:
     - name: Validate production Google Cloud dockerfile (Dockerfile.gcloud)
       run: docker run --rm -i hadolint/hadolint < Dockerfile.gcloud
     - name: Validate dev dockerfile (Dockerfile.test)
-      run: docker run --rm -i hadolint/hadolint < Dockerfile.test
+      run: docker run --rm -i hadolint/hadolint < test/Dockerfile.test
     - name: Validate terratest dockerfile (Dockerfile.terratest)
-      run: docker run --rm -i hadolint/hadolint < Dockerfile.terratest
+      run: docker run --rm -i hadolint/hadolint < test/infra/Dockerfile.terratest
 
   test-unit:
 

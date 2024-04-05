@@ -5,7 +5,7 @@ services:
     platform: linux/amd64
     build:
       context: .
-      dockerfile: Dockerfile.test
+      dockerfile: test/Dockerfile.test
     volumes:
       - ./test:/app/test:ro
 
@@ -106,7 +106,7 @@ services:
   test-infra:
     build:
       context: .
-      dockerfile: Dockerfile.terratest
+      dockerfile: test/infra/Dockerfile.terratest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 

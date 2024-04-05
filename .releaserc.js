@@ -91,7 +91,8 @@ module.exports = {
       }
     }],
     ['@semantic-release/changelog', {
-      changelogTitle: '# Changelog'
+      changelogTitle: '# Changelog',
+      changelogFile: ".github/CHANGELOG.md"
     }],
     ['@semantic-release/npm', {
       tarballDir: 'dist'

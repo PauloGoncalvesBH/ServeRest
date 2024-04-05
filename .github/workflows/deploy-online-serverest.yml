@@ -45,7 +45,7 @@ jobs:
     - name: Build and push image to gcloud container registry
       run: |
         gcloud builds submit . \
-          --config=cloudbuild.yaml \
+          --config=.github/cloudbuild.yaml \
           --substitutions=COMMIT_SHA=${{ github.sha }},_VERSION=${{ github.ref_name }},_PROJECT_ID=$IMAGE_PROJECT_ID,_SERVICE_NAME=$IMAGE_SERVICE_NAME
 
   deploy-staging:
