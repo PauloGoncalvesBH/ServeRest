@@ -57,7 +57,9 @@ function moesifMiddleware (req, res, next) {
     noAutoHideSensitive: true
   }
 
-  moesif(options)
+  try {
+    moesif(options)
+  } catch (error) {}
   return next()
 }
 
