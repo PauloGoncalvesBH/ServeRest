@@ -20,7 +20,7 @@ const {
 } = require('./utils/ambiente')
 const { conf } = require('./utils/conf')
 const errorHandler = require('./middlewares/error-handler')
-const localMonitor = require('./utils/localMonitor')
+const moesifMiddleware = require('./middlewares/moesif-monitor-middleware')
 const { version } = require('../package.json')
 const swaggerDocument = require('../docs/swagger.json')
 const packageJson = require('../package.json')
@@ -47,6 +47,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(queryParser())
 app.use(timeout())
 app.use(cors())
+app.use(moesifMiddleware)
 
 app.disable('etag')
 
@@ -70,8 +71,6 @@ if (!conf.semHeaderDeSeguranca) {
 if (aplicacaoExecutandoLocalmente() && !ehAmbienteDeTestes) {
   app.use(require('express-status-monitor')({ title: 'ServeRest Status' }))
 }
-
-localMonitor(app)
 
 const hostMapping = {
   'serverest.dev': 'serverest.dev',

@@ -15,11 +15,11 @@ const {
   formaDeExecucao,
   ehAmbienteDeDesenvolvimento,
   ehAmbienteDeTestes
-} = require('./ambiente')
+} = require('../utils/ambiente')
 
-module.exports = async app => {
-  if (ehAmbienteDeDesenvolvimento || ehAmbienteDeTestes || !aplicacaoExecutandoLocalmente()) {
-    return
+function moesifMiddleware (req, res, next) {
+  if (ehAmbienteDeDesenvolvimento || ehAmbienteDeTestes || !aplicacaoExecutandoLocalmente() || !process.env.MOESIF_APPLICATION_ID) {
+    return next()
   }
   const { porta, timeout, nodoc, nobearer, nosec } = require('../server').argv
   const urlsToSkip = [
@@ -34,8 +34,10 @@ module.exports = async app => {
     '/swagger-ui-bundle.js',
     '/swagger-ui-bundle.js.map'
   ]
-  const moesifMiddleware = moesif({
+
+  const options = {
     applicationId: process.env.MOESIF_APPLICATION_ID,
+    logbody: true,
     identifyUser: (req, res) => { return formaDeExecucao() },
     identifyCompany: (req, res) => { return version },
     skip: (req, res) => {
@@ -53,6 +55,10 @@ module.exports = async app => {
       }
     },
     noAutoHideSensitive: true
-  })
-  app.use(moesifMiddleware)
+  }
+
+  moesif(options)
+  return next()
 }
+
+module.exports = moesifMiddleware

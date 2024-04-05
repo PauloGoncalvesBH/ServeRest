@@ -62,7 +62,7 @@
     "express-validation": "^3.0.8",
     "is-ci": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
-    "moesif-nodejs": "^3.1.5",
+    "moesif-nodejs": "^3.6.1",
     "morgan": "^1.10.0",
     "nedb-promises": "^5.0.0",
     "open": "^8.0.6",
