@@ -56,7 +56,7 @@ Você pode contribuir de várias maneiras, sendo as mais conhecidas as seguintes
 É preciso ter os seguintes programas instalados:
 
 - [Git](https://git-scm.com/downloads)
-- _(opcional)_ [Node.js](https://nodejs.org/pt-br/download/), preferencialmente versão LTS.
+- _(opcional)_ [Node.js](https://nodejs.org/en/download), preferencialmente versão LTS.
     - Se usar docker não será preciso instalar o Node
 - [Docker](https://www.docker.com/get-started)
 - [Docker compose](https://docs.docker.com/compose/install/)
