@@ -21,14 +21,14 @@ jobs:
         PACT_BROKER_TOKEN: op://CI-CD/pactflow/PACT_BROKER_TOKEN
     - name: Project checkout - Continuous Integration
       if: inputs.type_pipeline == 'continuous_integration'
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
         ref: ${{ github.event.pull_request.head.ref }}
         repository: ${{ github.event.pull_request.head.repo.full_name }}
     - name: Project checkout - Continuous Delivery
       if: inputs.type_pipeline == 'continuous_delivery'
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - run: docker-compose build test-contract
     - name: Run contract test
       run: make test-contract
@@ -41,7 +41,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Node.js Setup
       uses: actions/setup-node@v4
     - name: Installation of Node.js dependencies
@@ -55,7 +55,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - uses: wagoid/commitlint-github-action@v5
@@ -68,7 +68,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Validate production Docker Hub dockerfile (Dockerfile)
       run: docker run --rm -i hadolint/hadolint < Dockerfile
     - name: Validate production Google Cloud dockerfile (Dockerfile.gcloud)
@@ -84,7 +84,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Load secrets from 1password
       uses: 1password/load-secrets-action@v2
       env:
@@ -113,7 +113,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Load secrets from 1password
       uses: 1password/load-secrets-action@v2
       env:
@@ -142,7 +142,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Load secrets from 1password
       uses: 1password/load-secrets-action@v2
       env:
@@ -168,7 +168,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.ref }}
         repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -201,7 +201,7 @@ jobs:
 
     steps:
     - name: Project checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - run: docker-compose build test-infra
     - name: Run infra test
       run: make test-infra
