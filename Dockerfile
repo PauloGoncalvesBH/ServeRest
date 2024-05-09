@@ -11,7 +11,11 @@ COPY package*.json ./
 
 RUN npm ci --production --ignore-scripts
 
+RUN npm i typescript@5.4.5
+
 COPY . .
+
+RUN npm run build
 
 ENV ENVIRONMENT='docker'
 
