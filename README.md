@@ -228,6 +228,9 @@ Veja aqui [como você pode contribuir](https://github.com/ServeRest/ServeRest/bl
       <td align="center" valign="top" width="14.28%"><a href="http://www.eduardosantos.dev"><img src="https://avatars.githubusercontent.com/u/10568807?v=4?s=100" width="100px;" alt="Eduardo Santos"/><br /><sub><b>Eduardo Santos</b></sub></a><br /><a href="https://github.com/ServeRest/ServeRest/commits?author=edumaxsantos" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/RenatoDaM"><img src="https://avatars.githubusercontent.com/u/112330702?v=4?s=100" width="100px;" alt="Renato Davoli"/><br /><sub><b>Renato Davoli</b></sub></a><br /><a href="https://github.com/ServeRest/ServeRest/commits?author=RenatoDaM" title="Code">💻</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ecureuill"><img src="https://avatars.githubusercontent.com/u/993369?v=4?s=100" width="100px;" alt="Camilla Silva"/><br /><sub><b>Camilla Silva</b></sub></a><br /><a href="https://github.com/ServeRest/ServeRest/issues?q=author%3Aecureuill" title="Bug reports">🐛</a></td>
+    </tr>
   </tbody>
 </table>
 
