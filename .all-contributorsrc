@@ -139,6 +139,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ecureuill",
+      "name": "Camilla Silva",
+      "avatar_url": "https://avatars.githubusercontent.com/u/993369?v=4",
+      "profile": "https://github.com/ecureuill",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "badgeTemplate": "![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=for-the-badge)",
