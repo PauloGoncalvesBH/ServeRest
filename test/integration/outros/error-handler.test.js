@@ -3,6 +3,7 @@ const sinon = require('sinon')
 const sandbox = sinon.createSandbox()
 
 const carrinhosService = require('../../../src/services/carrinhos-service.js')
+const usuariosService = require('../../../src/services/usuarios-service.js')
 const { version } = require('../../../package.json')
 
 describe('Error handler', () => {
@@ -51,9 +52,9 @@ describe('Error handler', () => {
 
   it('Deve informar para abrir issue ao ocorrer erro 500 com o tipo de erro ao ter "error.type" e não for erro de schema - @skipE2E', async () => {
     const consoleLogStub = sandbox.stub(console, 'log')
-    sandbox.stub(carrinhosService, 'getAll').throws({ type: 'test' })
+    sandbox.stub(usuariosService, 'existeUsuario').throws({ type: 'test' })
 
-    const { body } = await request.get('/carrinhos').expect(500)
+    const { body } = await request.post('/usuarios').send({ nome: 'something', email: '123@123.com', password: '123', administrador: 'true' }).expect(500)
 
     chai.assert.deepEqual(body, {
       message: 'Abra uma issue informando essa resposta. https://github.com/ServeRest/ServeRest/issues',
@@ -71,9 +72,9 @@ describe('Error handler', () => {
 
   it('Deve informar para abrir issue ao ocorrer erro 500 com toda a mensagem de erro ao não ter "error.type" - @skipE2E', async () => {
     const consoleLogStub = sandbox.stub(console, 'log')
-    sandbox.stub(carrinhosService, 'getAll').throws({ message: 'Teste de erro 500', stack: '.src/stack' })
+    sandbox.stub(usuariosService, 'existeUsuario').throws({ message: 'Teste de erro 500', stack: '.src/stack' })
 
-    const { body } = await request.get('/carrinhos').expect(500)
+    const { body } = await request.post('/usuarios').send({ nome: 'something', email: '123@123.com', password: '123', administrador: 'true' }).expect(500)
 
     chai.assert.deepEqual(body, {
       message: 'Abra uma issue informando essa resposta. https://github.com/ServeRest/ServeRest/issues',
